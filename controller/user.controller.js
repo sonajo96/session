@@ -123,16 +123,7 @@ const deleteuser = async (req, res) => {
     res.status(404).json({message:"error"})
   }
 };
-const logout = (req, res) => {
-    req.session.destroy((err) => {
-      if (err) {
-        return res.status(500).json({ message: "Unable to log out" });
-      }
-      res.status(200).json({ message: "Logout successful" });
-    });
-  };
-  
-  module.exports = { register, login, findall, getperson, updateuser, logout };
-  
 
-
+  
+  module.exports = { register, login, findall, getperson, updateuser,deleteuser };
+  
