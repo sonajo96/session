@@ -40,12 +40,12 @@ const login = async (req, res) => {
   }
 };
 const getperson=async(req,res)=>{
-const tokens=req.session.tokens;
+const token=req.session.token;
 const authheader=req.headers.authorization;
      if(!authheader || !authheader.startsWith("Bearer")){
     return res.status(401).json({message:"unathorized"});
   }
-  const token=authheader.split(" ")[1];
+   token=authheader.split(" ")[1];
   const run=verifyToken(token);
   if(!run){
     return res.status(401).json({message:"Invalid token"});
