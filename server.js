@@ -4,7 +4,7 @@ const session=require("express-session")
 const { connectDB } = require("./config/database");
 const router=require("./routes/user.routes")
 const User = require("./models/user");
-const { register, login } = require("./controller/user.controller");
+const { register, login ,deleteuser,updateuser,getperson,findall} = require("./controller/user.controller");
 
 
 const app = express();
